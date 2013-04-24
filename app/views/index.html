@@ -1,0 +1,10 @@
+{content name="main"}
+    <h3>Welcome to SimpleGallery</h3>
+    <p>A small webpage that loads images from Google or Flickr (at the moment) and they can be added to the Favourites.</p>
+    
+    <h4>Why have I done this webservice?</h4>
+    <p>Someone requested it to me and I just did it.</p>
+    
+    <h4>How I did it?</h4>
+    <p>Since I had a lot of time, I have decided to make a good structure in the project because if you don't start a project well then it will always continue following the bad way. The written code is PHP5.3 and it uses namespaces.<br />I have decided to use a Dependency Injection library called <a href="https://github.com/fabpot/Pimple">Pimple</a> which is written by Fabien Potencier, the creator of Symfony and I really like this library because it's simple, it uses closures and it makes the stuff done.<br />Then I decided to use <a href="https://github.com/katzgrau/KLogger">KLogger</a>, becuase I think that we (developers), should log everything that happens in our app.<br />For the Database I used just a simple PDO, which is good but if it was a bigger project I would have choosen Doctrine, a very powerfull ORM.<br />I used a router, that I found on internet long time ago but now I could not find who created it but I have modified it a little bit.<br />Since I am not good at design I decided to use a template, because I think the eye needs his part on everything. The template was made by <a href="http://jonnyholroyd.x10.mx/2012/07/freebie-simplegallery-theme/">Jonathan Holroyd</a>.<br /><br />Around all this stuff I've built a little MVC, so I could be more clean, I have separated the code from the UI thanks to <a href="https://github.com/DevAlien/AneTPLE">ANETple</a> (a Template Engine written by me long time ago). Using the Router was easy for me to implement some APIs as well. Infact we can see the APIs in the <a href="{config.base_url}/api">APIs Section</a>. There you can find some documentation and a PHP client with everything already implemented.</p>
+{/content}

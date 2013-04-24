@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+
+	<!-- title -->
+	<title>SimpleGallery</title>
+	
+	<!-- meta tags -->
+	<meta charset="utf-8">
+	<meta name="description" content="A simple gallery HTML theme.">
+	<meta name="author" content="Jonathan Holroyd">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- stylesheets -->
+	<link rel="stylesheet" href="{config.base_url}/app/views/css/base.css">
+	<link rel="stylesheet" href="{config.base_url}/app/views/css/skeleton.css">
+    <link rel="stylesheet" type="text/css" href="{config.base_url}/app/views/css/jquery.jgrowl.css"/>
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	
+	<!-- javascripts -->
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+	<script type="text/javascript" src="{config.base_url}/app/views/js/custom.js"></script>
+    <script  type="text/javascript" src="{config.base_url}/app/views/js/jquery.jgrowl.js"></script>
+    {content name="head"}
+    {/content}
+</head>
+<body>
+
+	<!-- container -->
+	<div class="container">
+	
+		<header>
+			
+			<h1 class="remove-bottom">Simple<span>Gallery</span></h1>
+            <ul class="menu">
+                <li class="menu"><a href="{config.base_url}" class="menu">Home</a></li>
+                <li class="menu"><a href="{config.base_url}/images/Google" class="menu">Google Images</a></li>
+                <li class="menu"><a href="{config.base_url}/images/Flickr" class="menu">Flickr Images</a></li>
+                <li class="menu"><a href="{config.base_url}/favourites" class="menu">Favourites</a></li>
+                <li class="menu"><a href="{config.base_url}/api" class="menu">API</a></li>
+            </ul>
+		</header>
+		{content name="main"}
+            
+        {/content}
+		
+		<!-- sixteen columns -->
+		<div class="sixteen columns add-bottom">
+		
+			<hr class="small" />
+			
+			<p class="left">&copy; 2012 SimpleGallery. All Rights Reserved.</p>
+			<p class="right">Designed by <a href="http://jonnyholroyd.x10.mx">Jonathan Holroyd</a>.</p>
+		
+		</div>
+		<!-- // sixteen columns -->
+		
+	</div>
+	<!-- // container -->
+	
+</body>
+</html>

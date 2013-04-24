@@ -1,0 +1,8 @@
+2013-04-20 19:17:50 - INFO --> Get Favourites 
+2013-04-20 19:17:56 - INFO --> Deleting Favourite, ID: 58 
+2013-04-20 19:17:58 - INFO --> Deleting Favourite, ID: 57 
+2013-04-20 19:18:03 - ERROR --> Could not download images from Flickr 
+2013-04-20 19:18:06 - ERROR --> Could not download images from Flickr 
+2013-04-20 19:18:39 - ERROR --> Could not download images from Google 
+2013-04-20 19:18:52 - INFO --> Get Favourites 
+2013-04-20 19:19:02 - INFO --> Deleting Favourite, ID: 63 

@@ -1,0 +1,49 @@
+homepage:
+  url: /
+  param: { controller: home, action: index }
+
+getImages:
+  url: /images/:source
+  param: { controller: home, action: randomImages }
+
+addToFavourite:
+  url: /add_favourite
+  param: { controller: home, action: ajaxAddToFavourite, method: POST }
+
+getFavourites:
+  url: /favourites
+  param: { controller: home, action: favourites }
+
+deleteFavourites:
+  url: /delete_favourite/:id
+  param: { controller: home, action: ajaxDeleteFavourite }
+
+updateFavourites:
+  url: /update_favourite/:id
+  param: { controller: home, action: ajaxUpdateFavourite, method: POST}
+
+api:
+  url: /api
+  param: { controller: home, action: api }
+
+
+#APIs
+APIGetImages:
+  url: /api/images/:source
+  param: { controller: API, action: randomImages, method: GET}
+
+APIGetFavourites:
+  url: /api/favourites
+  param: { controller: API, action: favourites, method: GET}
+
+APIAddFavourite:
+  url: /api/favourite
+  param: { controller: API, action: addFavourite, method: POST}
+
+APIUpdateFavourite:
+  url: /api/favourite/:id
+  param: { controller: API, action: updateFavourite, method: PUT}
+
+APIDeleteFavourites:
+  url: /api/favourite/:id
+  param: { controller: API, action: deleteFavourite, method: DELETE}

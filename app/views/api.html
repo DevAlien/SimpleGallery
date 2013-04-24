@@ -1,0 +1,94 @@
+{content name="main"}
+    <h3>SimpleGalery API</h3>
+    <p>We provide APIs for the service. The same thing that you can do on this webpage you will be able to do it via our APIs. <br />If yu are a PHP developer we did all the job for you. You can download our PHP API client from <a href="{config.base_url}/SimpleGalleryClient.zip">HERE</a>.</p>
+    <ul class="circle">
+        <li><a href="#randomImages">Get Random Images</a></li>
+        <li><a href="#favourites">Get Favourites</a></li>
+        <li><a href="#addFavourite">Add Favourite</a></li>
+        <li><a href="#removeFavourite">Remove Favourite</a></li>
+        <li><a href="#editFavourite">Edit Favourite</a></li>
+    </ul>
+    <h4>API URL</h4>
+    <p>Our API's are provided at <b>{config.base_url}/api</b></p>
+    <hr />
+
+    <h4 id="randomImages">Get Random Images</h4>
+    <p>You can get Random Images from different sources, at the moment, we have implemented just Flickr and Google.</p>
+    <blockquote>GET /images/:source</blockquote>
+    <p>:source => The source of the service to load the images from, at the moment we support "Google" or "Flickr"</p>
+    <h5>Valid Response Example</h5>
+    <blockquote>[
+  "http:\/\/farm9.staticflickr.com\/8467\/8437474423_0878f1105d_m.jpg",
+  "http:\/\/farm9.staticflickr.com\/8217\/8437474635_d7b6ae6f0b_m.jpg",
+  "http:\/\/farm9.staticflickr.com\/8184\/8437474691_e53f2c8c67_m.jpg",
+  "http:\/\/farm9.staticflickr.com\/8189\/8437474781_ce80a083ba_m.jpg",
+  "http:\/\/farm9.staticflickr.com\/8354\/8437474785_df5b2cf071_m.jpg",
+  "http:\/\/farm9.staticflickr.com\/8049\/8437474805_85a3ff7c2d_m.jpg",
+  "http:\/\/farm9.staticflickr.com\/8475\/8437474877_39e93aacd4_m.jpg",
+  "http:\/\/farm9.staticflickr.com\/8071\/8437474887_9570172974_m.jpg",
+  "http:\/\/farm9.staticflickr.com\/8351\/8437474919_71f16f3de2_m.jpg",
+  "http:\/\/farm9.staticflickr.com\/8072\/8437474943_6686ac3c13_m.jpg",
+  "http:\/\/farm9.staticflickr.com\/8364\/8437474949_634477a62a_m.jpg",
+  "http:\/\/farm9.staticflickr.com\/8087\/8438558398_d80ae9299b_m.jpg",
+  "http:\/\/farm9.staticflickr.com\/8333\/8438558480_8826425f24_m.jpg",
+  "http:\/\/farm9.staticflickr.com\/8323\/8438558514_4c52b5d4c3_m.jpg",
+  "http:\/\/farm9.staticflickr.com\/8073\/8438558590_06365a07d6_m.jpg",
+  "http:\/\/farm9.staticflickr.com\/8467\/8438558610_c3be50f6e4_m.jpg",
+  "http:\/\/farm9.staticflickr.com\/8516\/8438558720_5b21bdfece_m.jpg",
+  "http:\/\/farm9.staticflickr.com\/8332\/8438558724_6a4d5fbe44_m.jpg",
+  "http:\/\/farm9.staticflickr.com\/8326\/8438558736_f268f64afd_m.jpg",
+  "http:\/\/farm9.staticflickr.com\/8376\/8438558784_0e829a05ce_m.jpg"
+]</blockquote>
+    <h5>Error Response Example</h5>
+    <blockquote>{"response":false,"message":"Could not download images from Google"}</blockquote>
+    <hr />
+
+    <h4 id="favourites">Get Favourites</h4>
+    <p>Get the Images that you saved as Favourite.</p>
+    <blockquote>GET /favourites</blockquote>
+    <h5>Valid Response Example</h5>
+    <blockquote>[
+      {
+        "id":"52",
+        "url":"http:\/\/farm9.staticflickr.com\/8509\/8437309817_10f8f32e60_m.jpg",
+        "description":"Small Description"
+      },
+      {
+        "id":"56",
+        "url":"http:\/\/farm9.staticflickr.com\/8514\/8437488663_06d33401a3_m.jpg",
+        "description":null
+      }
+    ]</blockquote>
+    <hr />
+
+    <h4 id="addFavourite">Add Favourites</h4>
+    <p>Add an image to favourite, you can add one an image that you have got from our service or you can just pass a URL of an image</p>
+    <blockquote>POST /favourite</blockquote>
+    <p>POST parameter<br />url => url of the image</p>
+    <h5>Valid Response Example</h5>
+    <blockquote>{"response":true}</blockquote>
+    <h5>Error Response Example</h5>
+    <blockquote>{"response":false, "message":"The url provided is not valid"}</blockquote>
+    <hr />
+
+    <h4 id="removeFavourite">Remove Favourite</h4>
+    <p>You don't like an image anymore? You can delete it</p>
+    <blockquote>DELETE /favourite/:id</blockquote>
+    <p>:id => of the image that you want to get rid of</p>
+    <h5>Valid Response Example</h5>
+    <blockquote>{"response":true}</blockquote>
+    <h5>Error Response Example</h5>
+    <blockquote>{"response":false, "message":"Something went wrong"}</blockquote>
+    <hr />
+
+    <h4 id="editFavourite">Edit Favourite</h4>
+    <p>You don't like an image anymore? You can delete it</p>
+    <blockquote>PUT /favourite/:id</blockquote>
+    <p>:id => of the image that you want to get rid of</p>
+    <p>POST parameter<br />description => description of the image</p>
+    <h5>Valid Response Example</h5>
+    <blockquote>{"response":true}</blockquote>
+    <h5>Error Response Example</h5>
+    <blockquote>{"response":false, "message":"Something went wrong"}</blockquote>
+    <hr />    
+{/content}

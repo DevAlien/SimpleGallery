@@ -1,0 +1,8 @@
+How to install Simple gallery.
+
+1) You need to edit the file config.yaml_sample
+with your data and rename it into config.yaml
+
+2) Edit the file .htaccess_sample (rename to .htaccess) modifying the RewriteBase where the root folder is located in the virtual host. if it's in the root you just need "/" while if it's in a subfolder like "gallery" you should set it to "/gallery" this means that your website will run like http://example.com/gallery
+
+3) exceute the file sql.sql in your database that you previously configure in the config.yaml

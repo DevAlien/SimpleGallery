@@ -1,0 +1,9 @@
+RewriteEngine on
+RewriteBase /
+RewriteRule ^\.htaccess$ - [F]
+
+# Base Rules
+RewriteCond %{REQUEST_FILENAME} !\.(gif|png|jpg|jpeg|jfif|bmp|css|js|zip)$ [NC]
+RewriteCond $0 !^[^/]+/views/(.*)/(css|images|js|png|img)
+RewriteRule ^(.*)$ index.php
+# Base Rules

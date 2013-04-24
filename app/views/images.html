@@ -1,0 +1,50 @@
+{content name="head"}
+    <script>
+        (function($){
+
+            $(document).ready(function(){
+                $(document).on("click", "img.pict", function(){ addToFavourite($(this)); return false; });
+                $(document).on("click", "h5.caption", function(){ addToFavourite($(this).prev()); return false; });
+            });
+
+            function addToFavourite(img) {
+                src = img.attr('src');
+                $.post("{config.base_url}/add_favourite", {"url": src}, function(result){
+                    obj = jQuery.parseJSON(result);
+                    if(obj.response == true) {
+                        $.jGrowl('Picture has been added to your Favourites');
+                        
+                        img.next().removeClass('capt').html('Added in Favourites');
+                        $j("h5.caption", img).slideToggle("fast");
+                        img.removeClass('pict');
+                    }
+                    else
+                        $.jGrowl(obj.message);
+
+                });
+            }
+        })(jQuery);
+    </script>
+{/content}
+
+
+{content name="main"}
+            {loop name="images"}
+            {if condition="([counter.images]-1)%4 == 0"}
+            <div class="sixteen columns grid-bottom">
+            {/if}
+            <div class="four columns omega">
+            
+                <div class="image">
+                    <a href="#">
+                        <img src="{$$images}" class="pict" alt="Image" />
+                        <h5 class="caption capt">Add to Favourite</h5>
+                    </a>
+
+                </div>
+            </div>
+        {if condition="([counter.images])%4 == 0"}
+        </div>
+        {/if}
+            {/loop}
+{/content}

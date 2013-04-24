@@ -1,0 +1,4 @@
+2013-02-02 23:57:55 - INFO --> Get Favourites 
+2013-02-02 23:59:17 - ERROR --> Could not download images from Google 
+2013-02-02 23:59:17 - ERROR --> Could not download images from Google 
+2013-02-02 23:59:17 - ERROR --> Could not download images from Google 

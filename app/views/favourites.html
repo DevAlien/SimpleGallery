@@ -1,0 +1,73 @@
+{content name="head"}
+    <link rel="stylesheet" href="{config.base_url}/app/views/css/basic.css">
+    <!--[if lt IE 7]>
+        <link type='text/css' href='{config.base_url}/app/views/css/basic_ie.css' rel='stylesheet' media='screen' />
+    <![endif]-->
+    
+<script type="text/javascript" src="{config.base_url}/app/views/js/jquery.simplemodal.js"></script>
+    <script>
+        (function($){
+
+            var editId = 0;
+            $(document).ready(function(){
+
+                $(document).on("click", "a.delete", function(){ deleteFavourite($(this).attr('id')); return false; });
+                $(document).on("click", "a.edit", function(){ editId = $(this).attr('id').replace('test',''); $.modal('<div class="test"><input type="text" id="description" value=""/><input type="button" class="update" value="Update"/></div>'); return false; });
+                $(document).on("click", "input.update", function(e){ updateFavourite(editId, $('#description').val());  return false; });
+            });
+
+            function updateFavourite(id, description) {
+                $.post("{config.base_url}/update_favourite/" + id, {"description": description}, function(result){
+                    obj = jQuery.parseJSON(result);
+                    if(obj.response == true) {
+                        $.jGrowl('Picture has been update succesfully');
+                        $('#description').val('');
+                        $.modal.close();
+                        $('#test' + id).html(obj.description);
+                    }
+                    else
+                        $.jGrowl(obj.message);
+
+                });
+            }
+            
+            function deleteFavourite(id) {
+                $.get("{config.base_url}/delete_favourite/" + id, function(result){
+                    obj = jQuery.parseJSON(result);
+                    if(obj.response == true) {
+                        $( '.fav' + id ).remove();
+                        $.jGrowl('Picture has been delete from your Favourites');
+                    }
+                    else
+                        $.jGrowl(obj.message);
+
+                });
+            }
+        })(jQuery);
+    </script>
+{/content}
+
+{content name="main"}
+    {loop name="favourites"}
+            {if condition="([counter.favourites]-1)%4 == 0"}
+            <div class="sixteen columns grid-bottom">
+            {/if}
+            <div class="four columns omega">
+                
+                <div class="image">
+                        <img src="{$$favourites.Url}" class="pict fav{$$favourites.Id}" alt="Image" />
+                        <!-- <h5 class="caption capt">Add to Favourite</h5> -->
+
+                </div>
+                <a href="" id="{$$favourites.Id}" class="delete fav{$$favourites.Id}">Delete</a><br/>
+                {if condition="strlen([$$favourites.description]) > 0"}
+                    <a href="" id="test{$$favourites.Id}" class="edit fav{$$favourites.Id}">{$$favourites.Description}</a>
+                {else}
+                    <a href="#" id="test{$$favourites.Id}" class="edit fav{$$favourites.Id}">Add a description</a>
+                {/if}
+            </div>
+        {if condition="([counter.favourites])%4 == 0"}
+        </div>
+        {/if}
+    {/loop}
+{/content}

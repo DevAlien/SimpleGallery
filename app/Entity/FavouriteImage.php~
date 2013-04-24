@@ -1,0 +1,38 @@
+<?php
+
+namespace app\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * app\Entity\FavouriteImage
+ *
+ * @Table(name="favourite_image")
+ * @Entity()
+ *
+ */
+class FavouriteImage
+{
+    /**
+     * @var integer $id
+     *
+     * @Column(name="id", type="integer")
+     * @Id()
+     * @GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string $url
+     *
+     * @Column(name="url", type="string", length=255, unique=true)
+     */
+    private $url;
+
+    /**
+     * @var string $description
+     *
+     * @Column(name="email", type="description", length=255)
+     */
+    private $description;
+}

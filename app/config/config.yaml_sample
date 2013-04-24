@@ -1,0 +1,9 @@
+base: http://localhost
+base_url: http://localhost/test #this means that the folder is /test so the website will run there.
+base_dir: /test #this is the difference between base and base_url
+dbtype: mysql
+dbhost: localhost
+dbname: yakimbi
+dbusername: root
+dbpassword: password
+routing: default #Leave this like this
