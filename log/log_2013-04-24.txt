@@ -276,3 +276,20 @@ SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'https://u
 2013-04-24 1:27:24 - INFO --> Get Favourites 
 2013-04-24 1:27:24 - INFO --> Deleting Favourite, ID: 44 
 2013-04-24 1:27:25 - INFO --> Deleting Favourite, ID: WrongId 
+2013-04-24 1:35:40 - WARN --> app\Lib\FavouritesManager::addFavourite -> An exception occurred while executing 'INSERT INTO favourite_image (url, description) VALUES (?, ?)' with params {"1":"https:\/\/upload.wikimedia.org\/wikipedia\/commons\/thumb\/c\/c3\/KL_Sentral_at_Night.jpg\/800px-KL_Sentral_at_Night.jpg?1366763740","2":null}:
+
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/KL_Sen' for key 'UNIQ_6448852AF47645AE' 
+2013-04-24 1:35:40 - WARN --> app\Lib\FavouritesManager::addFavourite -> An exception occurred while executing 'INSERT INTO favourite_image (url, description) VALUES (?, ?)' with params {"1":"https:\/\/upload.wikimedia.org\/wikipedia\/commons\/thumb\/c\/c3\/KL_Sentral_at_Night.jpg\/800px-KL_Sentral_at_Night.jpg?1366763740","2":null}:
+
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/KL_Sen' for key 'UNIQ_6448852AF47645AE' 
+2013-04-24 1:35:40 - WARN --> app\Lib\FavouritesManager::createFavourite -> The URL provided ( wrongUrl ) is not a valid URL 
+2013-04-24 1:35:40 - INFO --> Get Favourites 
+2013-04-24 1:35:40 - WARN --> app\Lib\FavouritesManager::addFavourite -> An exception occurred while executing 'INSERT INTO favourite_image (url, description) VALUES (?, ?)' with params {"1":"https:\/\/upload.wikimedia.org\/wikipedia\/commons\/thumb\/c\/c3\/KL_Sentral_at_Night.jpg\/800px-KL_Sentral_at_Night.jpg?1366763740","2":null}:
+
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/KL_Sen' for key 'UNIQ_6448852AF47645AE' 
+2013-04-24 1:35:40 - INFO --> Get Favourites 
+2013-04-24 1:35:40 - INFO --> Editing Favourite, ID: 47 - Description: test 
+2013-04-24 1:35:41 - INFO --> Editing Favourite, ID: WrongId - Description: test 
+2013-04-24 1:35:41 - INFO --> Get Favourites 
+2013-04-24 1:35:41 - INFO --> Deleting Favourite, ID: 47 
+2013-04-24 1:35:41 - INFO --> Deleting Favourite, ID: WrongId 
