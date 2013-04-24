@@ -1,9 +1,10 @@
 base: http://localhost
 base_url: http://localhost/test #this means that the folder is /test so the website will run there.
 base_dir: /test #this is the difference between base and base_url
-dbtype: mysql
-dbhost: localhost
-dbname: yakimbi
-dbusername: root
-dbpassword: password
-routing: default #Leave this like this
+db_type: mysql
+db_host: localhost
+db_name: yakimbi
+db_username: root
+db_password: "password"
+db_namespace: "Simplegallery" #Leave this like this
+routing: "default" #Leave this like this
